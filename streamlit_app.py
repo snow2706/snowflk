@@ -8,5 +8,6 @@ streamlit.text('Good data management')
 my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 # Pick up list 
 my_fruit_list=my_fruit_list.set_index('Fruit')
-streamlit.multiselect('Pick some fruit',list(my_fruit_list.index),['Avocado'])
-streamlit.dataframe(my_fruit_list)
+fruit_selected = streamlit.multiselect('Pick some fruit',list(my_fruit_list.index),['Avocado'])
+fruit_to_show=my_fruit_list.loc[fruit_selected]
+streamlit.dataframe(fruit_to_show)
