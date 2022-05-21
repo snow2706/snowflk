@@ -1,3 +1,5 @@
+snowflake-connector-python
+
 import streamlit
 import pandas
 import requests
