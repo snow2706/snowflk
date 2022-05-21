@@ -51,8 +51,19 @@ try:
 		streamlit.header('You are not select any list')
 except URLError as e:
 	streamlit.error()
-	
+########## insert function 	
+def Insert_fruit_load_data(new_fruit):
+	with my_cnx.cursor() as my_cur:
+		my_cur.execute("insert into PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST values ('From Streamlit_1')")
+	return 'Thanks for adding fruit'
 
+my_fruit_addition = streamlit.text_input('What fruit you like to add one more fruit','Kiwi')
+
+if streamlit.button('add fruit to list'):
+	my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+	from_function=Insert_fruit_load_data(my_fruit_addition)
+	
+streamlit.write('Thank for addting ',my_fruit_addition)
 
 	
 streamlit.stop()
