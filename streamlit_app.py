@@ -45,7 +45,7 @@ def get_fruit_load_data():
 try:
 	if streamlit.button('Get fruit list'):
 		my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
-		data_row=get_fruit_load_data()
+		my_data_row=get_fruit_load_data()
 		streamlit.dataframe(my_data_row)
 	else:
 		streamlit.header('You are not select any list')
