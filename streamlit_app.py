@@ -18,7 +18,7 @@ streamlit.dataframe(fruit_to_show)
 
 #streamlit.text(fruityvice_response.json())
 
-#added new function 
+
 def get_frutvice_data(this_fruit_chioce):
 	fruityvice_response=requests.get("https://fruityvice.com/api/fruit/"+this_fruit_chioce)
 	fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
@@ -35,10 +35,10 @@ try:
 except URLError as e:
   streamlit.error()
   
-#snowflake related function 
+#snowflake related function Snow flake function to get fruit list from table 
 def get_fruit_load_data():
 	with my_cnx.cursor() as my_cur:
-		my_cur.execute('SELECT * from PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST')
+		my_cur.execute("SELECT * from PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST")
 	return my_cur.fetchall()
 
 #add button 
@@ -51,6 +51,7 @@ try:
 		streamlit.header('You are not select any list')
 except URLError as e:
 	streamlit.error()
+	
 ########## insert function 	
 def Insert_fruit_load_data(new_fruit):
 	with my_cnx.cursor() as my_cur:
