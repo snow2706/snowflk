@@ -2,7 +2,6 @@ import streamlit
 import pandas
 import requests
 
-
 streamlit.title('Hello Snowflake')
 streamlit.title('Learing the new things')
 streamlit.header('Dataware Housing')
@@ -14,7 +13,6 @@ fruit_selected = streamlit.multiselect('Pick some fruit',list(my_fruit_list.inde
 fruit_to_show=my_fruit_list.loc[fruit_selected]
 streamlit.dataframe(fruit_to_show)
 # NEW Section for request
-
 
 #streamlit.text(fruityvice_response.json())
 streamlit.header('Fruit vice Advice')
@@ -43,3 +41,4 @@ streamlit.header('Challange tab Input box')
 my_fruit_addition = streamlit.text_input('What fruit you like to add one more fruit','Kiwi')
 streamlit.write('Thank for addting ',my_fruit_addition)
 
+my_cur.execute("insert into PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST values ('From Streamlit')")
