@@ -1,10 +1,7 @@
-#requirement.txt
-snowflake-connector-python
-
 import streamlit
 import pandas
 import requests
-import snowflake.connector
+import snowflake
 
 streamlit.title('Hello Snowflake')
 streamlit.title('Learing the new things')
