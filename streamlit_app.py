@@ -65,7 +65,7 @@ except URLError as e:
 ########## insert function 	
 def Insert_fruit_load_data(new_fruit):
 	with my_cnx.cursor() as my_cur:
-		my_cur.execute("insert into PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST values ('From Streamlit_1')")
+		my_cur.execute("insert into PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST values ('"+new_fruit+"')")
 	return 'Thanks for adding fruit'
 
 my_fruit_addition = streamlit.text_input('What fruit you like to add one more fruit','Kiwi')
