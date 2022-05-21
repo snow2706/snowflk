@@ -1,7 +1,7 @@
 import streamlit
 import pandas
 import requests
-import snowflake
+import snowflake.connector
 
 streamlit.title('Hello Snowflake')
 streamlit.title('Learing the new things')
