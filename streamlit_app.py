@@ -37,3 +37,9 @@ my_data_row = my_cur.fetchall()
 streamlit.text("Hello from Snowflake:")
 streamlit.text("Fruit load list contain")
 streamlit.dataframe(my_data_row)
+
+#################Chanllage tab 
+streamlit.header('Challange tab Input box')
+my_fruit_addition = streamlit.text_input('What fruit you like to add one more fruit','Kiwi')
+streamlit.write('Thank for addting ',my_fruit_addition)
+
