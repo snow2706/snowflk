@@ -23,7 +23,7 @@ try:
   fruit_choice = streamlit.text_input('What fruit you like')
   if not fruit_choice:
     streamlit.error('Please select correct Fruit')
-  else
+  else:
     streamlit.write('User enter Choice',fruit_choice)
     fruityvice_response=requests.get("https://fruityvice.com/api/fruit/"+fruit_choice)
     # take json response 
